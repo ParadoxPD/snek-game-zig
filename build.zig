@@ -17,7 +17,7 @@ pub fn build(b: *std.Build) void {
     const raylib_artifact = raylib_dep.artifact("raylib"); // raylib C library
 
     const exe = b.addExecutable(.{
-        .name = "app",
+        .name = "snek",
         .root_source_file = b.path("./src/root.zig"),
         .target = target,
     });
