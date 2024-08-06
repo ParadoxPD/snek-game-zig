@@ -1,6 +1,6 @@
-# Matrix Rain in Zig
+# Snake Game in Zig
 
-![Matrix Rain](https://raw.githubusercontent.com/ParadoxPD/matrix-rain-in-zig/main/assets/output.gif)
+![Snake Game](https://raw.githubusercontent.com/ParadoxPD/matrix-rain-in-zig/main/assets/output.gif)
 
 `Zig Version - 0.14` 
 ### How to build the project

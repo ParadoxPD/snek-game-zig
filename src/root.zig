@@ -120,6 +120,6 @@ fn updateSnake(snake: *Snake) void {
     snake.setHeadPosition(newPosition);
 }
 
-fn updateFoodLocation(food: *const Food) void {
+fn updateFoodLocation(food: *Food) void {
     food.setPosition(Vector.initRandom(0, 0, screenWidth, screenHeight));
 }
