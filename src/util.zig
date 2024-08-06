@@ -1,7 +1,7 @@
 const std = @import("std");
 const raylib = @import("raylib");
 
-pub const Vector: type = struct {
+pub const Vector: type = extern struct {
     x: c_int,
     y: c_int,
 
@@ -22,18 +22,32 @@ pub const Vector: type = struct {
     pub fn getX(self: Vector) c_int {
         return self.x;
     }
-    pub fn setX(self: Vector, x: c_int) void {
+    pub fn setX(self: *Vector, x: c_int) void {
         self.x = x;
     }
     pub fn getY(self: Vector) c_int {
         return self.y;
     }
-    pub fn setY(self: Vector, y: c_int) void {
+    pub fn setY(self: *Vector, y: c_int) void {
         self.y = y;
     }
 
     pub fn toVector2(self: Vector) raylib.Vector2 {
         return raylib.Vector2.init(self.x, self.y);
+    }
+
+    pub fn add(v1: Vector, v2: Vector) Vector {
+        return Vector{
+            .x = v1.x + v2.x,
+            .y = v1.y + v2.y,
+        };
+    }
+
+    pub fn multiplyScalar(v1: Vector, s: c_int) Vector {
+        return Vector{
+            .x = v1.x * s,
+            .y = v1.y * s,
+        };
     }
 };
 
